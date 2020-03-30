@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+   >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        >
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="370dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:hint="Weight (in kg)"
+            android:inputType="number"
+            android:paddingLeft="8dp"
+            />
+        '
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="370dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/weight"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:hint="Height (in cm)"
+            android:inputType="number"
+            android:paddingLeft="8dp" />
+
+        <Button
+            android:id="@+id/risk_analysis"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/height"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="85dp"
+            android:layout_toLeftOf="@id/calculate_btn"
+            android:onClick="calculateRFM"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Risk Analysis"
+            android:textColor="#3D155F"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/calculate_btn"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/height"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="0dp"
+            android:onClick="calculateRFM"
+            android:text="CALCULATE"
+            android:textColor="#3D155F" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="370dp"
+            android:layout_height="300dp"
+            android:layout_below="@id/calculate_btn"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="8dp"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</LinearLayout>

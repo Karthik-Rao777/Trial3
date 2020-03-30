@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0b0b0b"
+    android:gravity="center"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnRed"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/sos"
+        android:fontFamily="serif"
+        android:onClick="redClick"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.154" />
+
+    <Button
+        android:id="@+id/btnYellow"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/caution"
+        android:fontFamily="serif"
+        android:onClick="yellowClick"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <Button
+        android:id="@+id/btnGreen"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/safe"
+        android:fontFamily="serif"
+        android:onClick="greenClick"
+
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/alarm"
+        android:fontFamily="serif"
+        android:onClick="soundClick"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.569" />
+
+    <Button
+        android:id="@+id/btnSetting"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/profile"
+        android:fontFamily="serif"
+        android:onClick="settingClick"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <Button
+        android:id="@+id/morebutton"
+        android:layout_width="8dp"
+        android:layout_height="20dp"
+        android:background="@drawable/more"
+        android:clickable="true"
+        android:onClick="morebutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@drawable/flash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="TAP TO ACTIVATE"
+        android:textColor="@color/design_default_color_background"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.451" />
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:gravity="bottom"-->
+    <!--android:weightSum="4"-->
+    <!--android:orientation="horizontal">-->
+    <!--<Button-->
+    <!--android:id="@+id/btnCall"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="siren"-->
+    <!--android:textColor="#fff"-->
+    <!--android:fontFamily="serif"-->
+    <!--android:textSize="15sp"-->
+    <!--android:onClick="soundClick"-->
+    <!--android:textStyle="bold"-->
+    <!--android:background="@drawable/btnred"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--<Button-->
+    <!--android:id="@+id/btnPolice"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="police"-->
+    <!--android:textColor="#fff"-->
+    <!--android:fontFamily="serif"-->
+    <!--android:textSize="15sp"-->
+    <!--android:textStyle="bold"-->
+    <!--android:onClick="policeClick"-->
+    <!--android:background="@drawable/btn1"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--<Button-->
+    <!--android:id="@+id/btnNews"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="News"-->
+    <!--android:textColor="#fff"-->
+    <!--android:fontFamily="serif"-->
+    <!--android:textSize="15sp"-->
+    <!--android:textStyle="bold"-->
+    <!--android:onClick="newsClick"-->
+    <!--android:background="@drawable/btn2"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--<Button-->
+    <!--android:id="@+id/btnSetting"-->
+    <!--android:layout_width="80dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="signup"-->
+    <!--android:textColor="#fff"-->
+    <!--android:fontFamily="serif"-->
+    <!--android:textSize="15sp"-->
+    <!--android:textStyle="bold"-->
+    <!--android:onClick="settingClick"-->
+    <!--android:background="@drawable/btnred"-->
+    <!--android:layout_margin="5dp"/>-->
+    <!--</LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

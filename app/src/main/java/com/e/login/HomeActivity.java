@@ -7,16 +7,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.os.Handler;
 
@@ -38,11 +42,16 @@ public class HomeActivity extends AppCompatActivity {
     boolean isRedClick = false;
     boolean isGreenClick = false;
     boolean isYellowClick = false;
+    private static final String TAG = "MainActivity";
+    boolean isTorchOn = false;
+    Button btnRed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        btnRed = findViewById(R.id.btnRed);
+
         sharedPreferences = getSharedPreferences("myPreference", Context.MODE_PRIVATE);
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS}, REQUEST_LOCATION);
@@ -67,6 +76,45 @@ public class HomeActivity extends AppCompatActivity {
             }, 10000);
         } else {
             Toast.makeText(this, "Invalid Sender Cell Number", Toast.LENGTH_SHORT).show();
+            Button button = (Button) view;
+            if (button.getText().equals("Switch On")) {
+                button.setText("Switch off");
+                button.setBackgroundResource(R.color.off);
+                torchToggle("on");
+            } else {
+                button.setText("Switch on");
+                button.setBackgroundResource(R.color.on);
+                torchToggle("off");
+            }
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            Intent intent1 = new Intent(Intent.ACTION_SEND);
+            intent.setData(Uri.parse("tel:9663803347"));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            startActivity(intent);
+        }
+    }
+    private void torchToggle(String command) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            CameraManager camManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+            String cameraId = null; // Usually back camera is at 0 position.
+            try {
+                if (camManager != null) {
+                    cameraId = camManager.getCameraIdList()[0];
+                }
+                if (camManager != null) {
+                    if (command.equals("on")) {
+                        camManager.setTorchMode(cameraId, true);   // Turn ON
+                        isTorchOn = true;
+                    } else {
+                        camManager.setTorchMode(cameraId, false);  // Turn OFF
+                        isTorchOn = false;
+                    }
+                }
+            } catch (CameraAccessException e) {
+                e.getMessage();
+            }
         }
     }
 
